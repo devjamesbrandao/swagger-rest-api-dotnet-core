@@ -55,7 +55,12 @@ namespace AwesomeDevEvents.API.Controllers
         /// Cadastrar um evento
         /// </summary>
         /// <remarks>
-        /// {"title":"string","description":"string","startDate":"2023-02-27T17:59:14.141Z","endDate":"2023-02-27T17:59:14.141Z"}
+        /// {
+        ///     "title":"string",
+        ///     "description":"string",
+        ///     "startDate":"2023-02-27T17:59:14.141Z",
+        ///     "endDate":"2023-02-27T17:59:14.141Z"
+        /// }
         /// </remarks>
         /// <param name="devEvent">Dados do evento</param>
         /// <returns>Objeto recém-criado</returns>
@@ -75,7 +80,14 @@ namespace AwesomeDevEvents.API.Controllers
         /// Atualizar um evento
         /// </summary>
         /// <remarks>
-        /// {"title":"string","description":"string","startDate":"2023-02-27T17:59:14.141Z","endDate":"2023-02-27T17:59:14.141Z"}
+        ///
+        ///     {
+        ///         "title":"string",
+        ///         "description":"string",
+        ///         "startDate":"2023-02-27T17:59:14.141Z",
+        ///         "endDate":"2023-02-27T17:59:14.141Z"
+        ///     }
+        /// 
         /// </remarks>
         /// <param name="id">Identificador do evento</param>
         /// <param name="input">Dados do evento</param>
@@ -127,7 +139,12 @@ namespace AwesomeDevEvents.API.Controllers
         /// Cadastrar palestrante
         /// </summary>
         /// <remarks>
-        /// {"name":"string","talkTitle":"string","talkDescription":"string","linkedInProfile":"string"}
+        /// {
+        ///     "name":"string",
+        ///     "talkTitle":"string",
+        ///     "talkDescription":"string",
+        ///     "linkedInProfile":"string"
+        /// }
         /// </remarks>
         /// <param name="id">Identificador do evento</param>
         /// <param name="speaker">Dados do palestrante</param>
@@ -146,7 +163,7 @@ namespace AwesomeDevEvents.API.Controllers
             if (!devEvent) return NotFound();
 
             _context.DevEventSpeakers.Add(speaker);
-            
+
             _context.SaveChanges();
 
             return NoContent();

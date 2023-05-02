@@ -1,16 +1,14 @@
-# AwesomeDevEvents - Curso Criando REST APIs com ASP.NET Core
+<h1 align="center"><strong>API para cadastro de eventos e palestranate em .NET 7 e SQL Server com documentação utilizando SWAGGER</strong></h1>
 
-Está sendo desenvolvido um projeto de eventos de programação, utilizando ASP.NET Core 7.
+<hr/>
 
-## Tecnologias e ferramentas utilizadas
-- Visual Studio 2022
-- ASP.NET Core 7
-- EF Core
-- Swagger
-- AutoMapper
+### `Swagger`
+<p align="center">
+    <img src="/Img/swagger.png" alt="Imagem do swagger da aplicação" title="Imagem do swagger da aplicação">
+</p> 
 
-
-## Funcionalidades
-- Cadastro, Listagem, Detalhes, Atualização, e Remoção de Evento
-- Cadastro de palestrantes
+### ` 💡 Tópicos abordados`
+* .NET 7
+* SWAGGER
+* Documentação
 
