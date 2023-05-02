@@ -46,10 +46,7 @@ namespace AwesomeDevEvents.API.Controllers
                 .Include(de => de.Speakers)
                 .SingleOrDefault(d => d.Id == id);
 
-            if (devEvent == null)
-            {
-                return NotFound();
-            }
+            if (devEvent is null) return NotFound();
 
             return Ok(devEvent);
         }
@@ -68,6 +65,7 @@ namespace AwesomeDevEvents.API.Controllers
         public IActionResult Post(DevEvent devEvent)
         {
             _context.DevEvents.Add(devEvent);
+
             _context.SaveChanges();
 
             return CreatedAtAction(nameof(GetById), new { id = devEvent.Id }, devEvent);
@@ -91,14 +89,12 @@ namespace AwesomeDevEvents.API.Controllers
         {
             var devEvent = _context.DevEvents.SingleOrDefault(d => d.Id == id);
 
-            if (devEvent == null)
-            {
-                return NotFound();
-            }
+            if (devEvent is null) return NotFound();
 
             devEvent.Update(input.Title, input.Description, input.StartDate, input.EndDate);
 
             _context.DevEvents.Update(devEvent);
+
             _context.SaveChanges();
 
             return NoContent();
@@ -118,10 +114,7 @@ namespace AwesomeDevEvents.API.Controllers
         {
             var devEvent = _context.DevEvents.SingleOrDefault(d => d.Id == id);
 
-            if (devEvent == null)
-            {
-                return NotFound();
-            }
+            if (devEvent is null) return NotFound();
 
             devEvent.Delete();
 
@@ -150,12 +143,10 @@ namespace AwesomeDevEvents.API.Controllers
 
             var devEvent = _context.DevEvents.Any(d => d.Id == id);
 
-            if (!devEvent)
-            {
-                return NotFound();
-            }
+            if (!devEvent) return NotFound();
 
             _context.DevEventSpeakers.Add(speaker);
+            
             _context.SaveChanges();
 
             return NoContent();
